@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->string('stasut')->default('Awaiting payment');
-            $table->string('delivery_type');
-            $table->string('payment_type');
-            $table->bigInteger('total_price');
+            $table->string('status')->default('Awaiting payment');
+            $table->string('delivery_type')->default('pickup');
+            $table->string('payment_type')->default('cashless payment');
+            $table->bigInteger('total_price')->default(0);
             $table->timestamps();
         });
     }

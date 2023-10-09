@@ -14,10 +14,16 @@
     </head>
     <body class="antialiased">
         <header class="header">
-            <x-header/> 
-
+            <x-header/>
         </header>
+        @foreach ($items as $item)
+            <x-busket_item :item='$item->product'/>
+        @endforeach
 
+
+        <form action="/busket/pay" method="get">
+            <button>Оплатить</button>
+        </form>
         <x-footer/>
     </body>
 </html>

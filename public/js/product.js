@@ -1,12 +1,6 @@
 
-document.querySelectorAll('.product_item').forEach(item => {
-    item.addEventListener('click', (e) => {
-        console.log(e.target.dataset.columns);
-})})
 
-
-
-document.querySelector('.toBusket').addEventListener('click', () => {
-
-})
+// document.querySelector('.toBusket').addEventListener('click', (e) => {
+//     fetch(`http://127.0.0.1:8000/product/${e.target.getAttribute("data-id")}`)
+// })
 

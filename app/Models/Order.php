@@ -11,10 +11,6 @@ class Order extends Model
 {
     use HasFactory, AsSource;
 
-    public function order_item(): HasMany
-    {
-        return $this->HasMany(Order_item::class);
-    }
 
     protected $fillable = [
         'delivery_type',
@@ -25,4 +21,7 @@ class Order extends Model
         'updated_at'
     ];
 
+    public function order_item () {
+        return $this->hasMany(Order_item::class, 'order_id', 'id');
+    }
 }

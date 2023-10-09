@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
 use Orchid\Platform\Models\User as Authenticatable;
+use Orchid\Screen\AsSource;
 
 class User extends Authenticatable
 {
+    use HasFactory, AsSource;
     /**
      * The attributes that are mass assignable.
      *
@@ -18,9 +22,15 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'order_id',
         'password',
         'permissions',
     ];
+
+    public function busket(): HasOne
+    {
+        return $this->hasOne(Order::class, "id", "order_id");
+    }
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -69,8 +79,5 @@ class User extends Authenticatable
         'created_at',
     ];
 
-    public function orders(): HasMany
-    {
-        return $this->hasMany(Order::class);
-    }
+
 }

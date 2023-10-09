@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('type')->nullable();
+            $table->foreignId('order_id')->nullable()->references('id')->on('orders');
             $table->rememberToken();
             $table->timestamps();
         });

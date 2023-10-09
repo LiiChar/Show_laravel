@@ -12,11 +12,15 @@ class Order_item extends Model
     use HasFactory, AsSource;
 
 
-    public function order(): HasOne
-    {
-        return $this->hasOne(Order::class);
-    }
 
+    protected $fillable = [
+        'id',
+        'price',
+        'quantity',
+        'category_id',
+        'product_id',
+        'order_id'
+    ];
 
     public function product(): HasOne
     {

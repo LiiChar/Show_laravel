@@ -12,7 +12,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "orchid/platform": "^14.13"
+        "orchid/platform": "^14.13",
+        "voronkovich/sberbank-acquiring-client": "^2.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -60,7 +60,7 @@ html {
     width: 100%;
     height: 100%;
     top: 0;
-    
+
 }
 
 .product_item_name {
@@ -76,9 +76,60 @@ html {
     padding: 0 20%;
     width: 100%;
     height: 100%;
+    display: flex;
 }
 
 .product_image_wrapper {
     display: flex;
+    width: 100%;
     gap: 15px;
+}
+
+.product_image {
+    width: 70%;
+    height: auto;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.product_info {
+    width: 30%;
+}
+
+.register_wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 15% 35%;
+}
+
+.register_wrapper input {
+    width: 100%;
+    height: 8%;
+    border-radius: 4px;
+    padding: 4px;
+
+}
+
+.form-group {
+    margin: 5px;
+}
+
+.form-group-name {
+    width: 100%;
+    border-bottom: 1px solid black;
+
+}
+
+.register_button {
+    margin-top: 10px;
+    width: 20%;
+    height: 10%;
+}
+
+.register_button button {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
 }
